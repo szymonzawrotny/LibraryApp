@@ -12,7 +12,7 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  title: "Biblioteczka",
+  title: "Your Video",
   description: "Projekt - aplikacja do zarządzania działaniem biblioteki",
 };
 
