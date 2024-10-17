@@ -69,7 +69,9 @@
         justify-content: center;
         align-items: center;
 
-        .movieList,.rentalsList,.rentMovie {
+        .movieList,
+        .rentalsList,
+        .rentMovie {
             background-color: rgba(240, 248, 255, 0.521);
             box-shadow: 5px 5px #222;
             width: 80%;
@@ -77,7 +79,7 @@
             display: flex;
             flex-direction: column;
 
-            h2{
+            h2 {
                 text-transform: capitalize;
                 text-align: center;
             }
@@ -87,7 +89,7 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                margin-top:15px;
+                margin-top: 15px;
 
                 input {
                     height: 80%;
@@ -112,9 +114,11 @@
                     flex-direction: column;
                     justify-content: center;
                     align-items: center;
-                    margin-top: 15px;;
+                    margin-top: 15px;
+                    ;
+
                     li {
-                        width:90%;
+                        width: 90%;
                         list-style-type: none;
                         border-bottom: 2px solid #222;
                         padding: 5px;
@@ -122,17 +126,98 @@
                         cursor: default;
                         display: flex;
                         justify-content: space-between;
-                        .show{
-                            font-size:28px;
+
+                        .show {
+                            font-size: 28px;
                             cursor: pointer;
                         }
                     }
                 }
             }
         }
-        .rentalsList{
-            .list{
+
+        .rentalsList {
+            .list {
                 overflow: auto;
+            }
+        }
+
+        .adminPanel {
+            width: 80%;
+            height: 90svh;
+            display: flex;
+            justify-content: space-between;
+            .manageMovie{
+                width:45%;
+                background-color: rgba(240, 248, 255, 0.521);
+                box-shadow: 5px 5px #222;
+            }
+            .manageUser{
+                width:45%;
+                background-color: rgba(240, 248, 255, 0.521);
+                box-shadow: 5px 5px #222;
+                display: flex;
+                flex-direction: column;
+                .add{
+                    padding:5px;
+                    flex-basis:20%;
+                    h2{
+                        text-align: center;
+                    }
+                    form{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        input{
+                            margin:5px;
+                            width:60%;
+                        }
+                    }
+                }
+                .update{
+                    padding:5px;
+                    flex-basis:20%;
+                    h2{
+                        text-align: center;
+                    }
+                    form{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        input{
+                            margin:5px;
+                            width:60%;
+                        }
+                    }
+                }
+                .delete{
+                    padding:5px;
+                    flex-basis:20%;
+                    h2{
+                        text-align: center;
+                    }
+                    form{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        input{
+                            margin:5px;
+                            width:60%;
+                        }
+                    }
+                }
+                .userList{
+                    flex-basis:40%;
+                    overflow-y: scroll;
+                    padding:50px;
+                    padding-top:0;
+                    padding-bottom:0;
+                    ul{
+                        li{
+                            margin:15px 0 15px 0;
+                        }
+                    }
+                }
             }
         }
     }

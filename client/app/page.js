@@ -50,8 +50,8 @@ const Home = () => {
         <div className="login">
           <h2>login</h2>
           <form onSubmit={handleLog}>
-            <input type="text" placeholder="email..." onChange={(e)=>{setEmail(e.target.value)}}/>
-            <input type="text" placeholder="password..." onChange={(e)=>{setPassword(e.target.value)}}/>
+            <input type="email" placeholder="email..." onChange={(e)=>{setEmail(e.target.value)}}/>
+            <input type="password" placeholder="password..." onChange={(e)=>{setPassword(e.target.value)}}/>
             <input type="submit" value="zaloguj" />
           </form>
         </div>

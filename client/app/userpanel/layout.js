@@ -8,8 +8,19 @@ import { MdAddShoppingCart } from "react-icons/md";
 import { CgLogOut } from "react-icons/cg";
 import { signOut } from "next-auth/react";
 import { useSession } from "next-auth/react";
+import { useRouter } from 'next/navigation';
+import { RiAdminLine } from "react-icons/ri";
 
 export default function RootLayout({ children }) {
+
+    const router = useRouter();
+
+    const { data: session } = useSession({
+        required: false,
+        onUnauthenticated() {
+            router.push("/")
+        }
+    })
 
     const logout = ()=>{
         signOut({ callbackUrl: "/" })
@@ -41,6 +52,14 @@ export default function RootLayout({ children }) {
                         rent
                     </div>
                 </Link>
+                { 
+                    session?.user?.email.email === "szymonzawrotny@gmail.com" && <Link href="/userpanel/admin">
+                        <div className="option">
+                            <RiAdminLine size={28} />
+                            adminpanel
+                        </div>
+                     </Link>
+                }
                 <div className="logout" onClick={logout}>
                     <CgLogOut size={36} />
                 </div>

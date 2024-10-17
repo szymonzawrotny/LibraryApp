@@ -35,7 +35,13 @@ export const options = {
                         throw new Error("Nieprawidłowy login lub hasło");
                     }
 
-                    return { id: user._id, name: user.username };
+                    return {
+                        email: {
+                            email: user.email,
+                            name: user.name,
+                            surname: user.surname
+                        }
+                    };
 
                 } catch (error) {
                     console.log(error);
