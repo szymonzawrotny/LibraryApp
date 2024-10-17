@@ -1,3 +1,4 @@
+"use client"
 import Link from 'next/link'
 import "./style.scss"
 import { FaCameraRetro } from "react-icons/fa";
@@ -5,8 +6,15 @@ import { MdLocalMovies } from "react-icons/md";
 import { MdMovieEdit } from "react-icons/md";
 import { MdAddShoppingCart } from "react-icons/md";
 import { CgLogOut } from "react-icons/cg";
+import { signOut } from "next-auth/react";
+import { useSession } from "next-auth/react";
 
 export default function RootLayout({ children }) {
+
+    const logout = ()=>{
+        signOut({ callbackUrl: "/" })
+    }
+
     return (
         <div className="userpanel">
             <nav>
@@ -33,7 +41,7 @@ export default function RootLayout({ children }) {
                         rent
                     </div>
                 </Link>
-                <div className="logout">
+                <div className="logout" onClick={logout}>
                     <CgLogOut size={36} />
                 </div>
             </nav>

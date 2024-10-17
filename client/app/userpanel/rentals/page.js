@@ -1,6 +1,20 @@
+"use client"
 import "../style.scss"
+import { useRouter } from 'next/navigation';
+import { useSession } from 'next-auth/react';
 
 const Home = () => {
+
+    const router = useRouter();
+
+    const {data:session} = useSession({
+        required: true,
+        onUnauthenticated(){
+            router.push("/")
+        }
+
+    })
+
     return (
         <div className="rentalsList">
             <h2>Your Rentals</h2>
