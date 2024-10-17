@@ -10,31 +10,31 @@ export default function RootLayout({ children }) {
     return (
         <div className="userpanel">
             <nav>
-                <Link href="/">
+                <Link href="/userpanel">
                     <div className="logo">
-                        <FaCameraRetro size={42}/>
+                        <FaCameraRetro size={42} />
                     </div>
                 </Link>
                 <Link href="/userpanel/movies">
                     <div className="option">
-                        <MdLocalMovies size={28}/>
+                        <MdLocalMovies size={28} />
                         movies
                     </div>
                 </Link>
                 <Link href="/userpanel/rentals">
                     <div className="option">
-                        <MdMovieEdit size={28}/>
+                        <MdMovieEdit size={28} />
                         yours rentals
                     </div>
                 </Link>
                 <Link href="/userpanel/rent">
                     <div className="option">
-                        <MdAddShoppingCart size={28}/>
+                        <MdAddShoppingCart size={28} />
                         rent
                     </div>
                 </Link>
                 <div className="logout">
-                    <CgLogOut size={36}/>
+                    <CgLogOut size={36} />
                 </div>
             </nav>
             <main>
