@@ -16,7 +16,7 @@ const Home = () => {
     const [copyList, setCopyList] = useState([]);
 
     const { data: session } = useSession({
-        required: false,
+        required: true,
         onUnauthenticated() {
             router.push("/")
         }

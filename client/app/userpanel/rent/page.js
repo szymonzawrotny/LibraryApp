@@ -10,7 +10,7 @@ const Home = () => {
     const router = useRouter();
 
     const {data:session} = useSession({
-        required: false,
+        required: true,
         onUnauthenticated(){
             router.push("/")
         }

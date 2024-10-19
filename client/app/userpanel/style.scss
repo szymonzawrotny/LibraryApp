@@ -151,6 +151,72 @@
                 width:45%;
                 background-color: rgba(240, 248, 255, 0.521);
                 box-shadow: 5px 5px #222;
+                display: flex;
+                flex-direction: column;
+                .add{
+                    padding:5px;
+                    flex-basis:20%;
+                    h2{
+                        text-align: center;
+                    }
+                    form{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        input{
+                            margin:5px;
+                            width:60%;
+                        }
+                    }
+                }
+                .update{
+                    padding:5px;
+                    flex-basis:20%;
+                    h2{
+                        text-align: center;
+                    }
+                    form{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        input{
+                            margin:5px;
+                            width:60%;
+                        }
+                    }
+                }
+                .delete{
+                    padding:5px;
+                    flex-basis:20%;
+                    h2{
+                        text-align: center;
+                    }
+                    form{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        input{
+                            margin:5px;
+                            width:60%;
+                        }
+                    }
+                }
+                .userList{
+                    flex-basis:40%;
+                    overflow-y: scroll;
+                    padding:50px;
+                    padding-top:0;
+                    padding-bottom:0;
+                    ul{
+                        li{
+                            margin:15px 0 15px 0;
+                            cursor: pointer;
+                            background-color: aliceblue;
+                            padding:5px;
+                            list-style-type: none;
+                        }
+                    }
+                }
             }
             .manageUser{
                 width:45%;
@@ -215,6 +281,10 @@
                     ul{
                         li{
                             margin:15px 0 15px 0;
+                            cursor: pointer;
+                            background-color: aliceblue;
+                            padding:5px;
+                            list-style-type: none;
                         }
                     }
                 }

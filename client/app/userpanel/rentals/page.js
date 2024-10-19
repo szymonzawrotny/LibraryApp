@@ -10,7 +10,7 @@ const Home = () => {
     const [list,setList] = useState([{tytul_filmu: "Forrest Gump"},{tytul_filmu: "Dwunastu gniewnych ludzi"}]);
 
     const { data: session } = useSession({
-        required: false,
+        required: true,
         onUnauthenticated() {
             router.push("/")
         }
