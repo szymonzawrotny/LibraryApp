@@ -17,6 +17,33 @@ const Home = () => {
     const [users, setUsers] = useState([]);
     const [movies,setMovies] = useState([]);
 
+    const [regEmail,setRegEmail] = useState("");
+    const [regPassword, setRegPassword] = useState("");
+
+    const handleReg = async (e) => {
+        e.preventDefault();
+    
+        const response = await fetch("http://localhost:5000/reg", {
+          method: "POST",
+          body: JSON.stringify({
+            regEmail,
+            regPassword
+          }),
+          headers: {
+            "Content-Type": "application/json"
+          }
+        })
+    
+        if (response.ok){
+          console.log("wysłano")
+          alert("dodano użytkownika")
+          setRegEmail("");
+          setRegPassword("");
+        }else{
+          console.log("coś nie działa");
+        }
+      }
+
     const fetchUserData = async () => {
         const response = await fetch("http://localhost:5000/usersApi")
             .then(response => response.json())
@@ -84,9 +111,17 @@ const Home = () => {
             <div className="manageUser">
                 <div className="add">
                     <h2>Dodaj klienta</h2>
-                    <form action="">
-                        <input type="text" placeholder='email...' />
-                        <input type="text" placeholder='password...' />
+                    <form onSubmit={handleReg}>
+                        <input 
+                            type="text" 
+                            value={regEmail}
+                            onChange={e=>setRegEmail(e.target.value)}
+                            placeholder='email...'/>
+                        <input 
+                            type="text" 
+                            value={regPassword}
+                            onChange={e=>setRegPassword(e.target.value)}
+                            placeholder='password...' />
                         <input type="submit" value="dodaj" />
                     </form>
                 </div>
