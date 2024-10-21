@@ -10,7 +10,7 @@ const Home = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const [regEmail,setRegEmail] = useState("");
+  const [regEmail, setRegEmail] = useState("");
   const [regPassword, setRegPassword] = useState("");
 
 
@@ -29,13 +29,14 @@ const Home = () => {
       }
     })
 
-    if (response.ok){
+    if (response.ok) {
       console.log("wysłano")
       alert("dodano użytkownika")
       setRegEmail("");
       setRegPassword("");
-    }else{
+    } else {
       console.log("coś nie działa");
+      alert("coś nie działa")
     }
   }
 
@@ -50,6 +51,7 @@ const Home = () => {
 
     if (result.error) {
       console.log(result.error);
+      alert("Błędne dane logowania :(")
     } else {
       router.push('/userpanel')
     }
@@ -65,16 +67,16 @@ const Home = () => {
         <div className="register">
           <h2>register</h2>
           <form onSubmit={handleReg}>
-            <input 
-              type="text" 
-              placeholder="email..." 
-              value={regEmail} 
-              onChange={e=>setRegEmail(e.target.value)}/>
-            <input 
-              type="text" 
-              placeholder="password..." 
+            <input
+              type="text"
+              placeholder="email..."
+              value={regEmail}
+              onChange={e => setRegEmail(e.target.value)} />
+            <input
+              type="text"
+              placeholder="password..."
               value={regPassword}
-              onChange={e=>setRegPassword(e.target.value)}/>
+              onChange={e => setRegPassword(e.target.value)} />
             <input type="text" placeholder="password again..." />
             <input type="submit" value="add" />
           </form>

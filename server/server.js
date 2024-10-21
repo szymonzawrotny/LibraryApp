@@ -52,8 +52,6 @@ app.get("/usersApi", async (req, res) => {
 app.post("/reg", async (req, res) => {
     const { regEmail, regPassword } = req.body;
 
-    console.log(regEmail, regPassword);
-
     try {
         const result = await users.insertOne({
             "email": regEmail,
@@ -65,4 +63,20 @@ app.post("/reg", async (req, res) => {
     }
 
     res.status(200).json({ message: "działa" })
+})
+
+app.post("/deleteaccount", async (req, res) => {
+    const { email } = req.body;
+
+    try {
+        const result = await users.deleteOne({
+            "email": email
+        })
+
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({ message: "coś nie działa na serwerze" })
+    }
+
+    console.log(email);
 })
